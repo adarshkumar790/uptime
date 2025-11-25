@@ -1,0 +1,378 @@
+:root {
+  --left-width: 320px;
+  --border: #e1e4e8;
+  --muted: #586069;
+}
+
+/* reset */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f6f8fa;
+  color: #24292f;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* topbar */
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px;
+}
+
+/* layout */
+.layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* prevents vertical collapse */
+}
+
+.left-panel {
+  width: var(--left-width);
+}
+
+.avatar-wrap { border-radius: 8px; overflow: hidden; }
+
+.avatar {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(27,31,35,0.06);
+}
+
+.name { margin: 14px 0 6px; font-size: 20px; }
+.handle { color: var(--muted); margin: 0 0 12px; }
+.bio { line-height: 1.4; margin-bottom: 12px; }
+.info-list p { margin: 6px 0; color: var(--muted); font-size: 14px; }
+
+/* ⭐ Main area fix—THIS fixes your card vertical problem */
+.main {
+  flex: 1;
+  min-width: 550px; /* prevents grid collapsing into 1 column */
+}
+
+.tabs {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding-left: 6px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tab {
+  padding: 10px 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tab.active {
+  color: #0969da;
+  border-bottom: 2px solid #0969da;
+}
+
+/* content area */
+.content { padding: 2px 0; }
+
+.cards-row { display: flex; gap: 16px; margin-bottom: 18px; }
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+/* stats */
+.stats-row { display: flex; gap: 18px; align-items: flex-start; }
+.heatmap-column { flex: 1.6; gap: 8px; }
+.right-column { flex: 0.2; display: flex; flex-direction: column; gap: 12px; }
+
+/* heatmap */
+.card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.heatmap-card { padding: 0px; }
+
+.legend {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.legend-squares {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin: 0 6px;
+  padding: 2px;
+}
+
+.legend-squares .sq {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* right years */
+.years-list {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.year-pill {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: white;
+  cursor: pointer;
+}
+
+.year-pill.active {
+  background: #0969da;
+  color: white;
+}
+
+/* recent activity */
+.activity-list { display: flex; flex-direction: column; gap: 14px; }
+.activity-item { display: flex; gap: 10px; }
+.activity-icon {
+  width: 36px;
+  color: #6a737d;
+  font-size: 20px;
+  text-align: center;
+}
+.activity-title { font-weight: 600; }
+.activity-details { color: var(--muted); font-size: 13px; }
+.activity-meta { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+/* search */
+.search-box { display: flex; gap: 8px; align-items: center; }
+.search-box input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  min-width: 240px;
+}
+.search-box button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+}
+
+/* top navigation */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: hsl(0, 0%, 100%);
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.left-section { display: flex; align-items: center; }
+.github-logo { font-size: 26px; margin-right: 12px; }
+.username { font-size: 16px; font-weight: 600; margin-right: 24px; }
+
+.nav-tabs { display: flex; gap: 22px; }
+
+.tab {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  font-weight: 600;
+  color: #000;
+  border-bottom: 2px solid #ff6a6a;
+}
+
+.count {
+  background: #e9ecef;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 6px 10px 6px 28px;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  font-size: 13px;
+  width: 180px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.icon-btn { font-size: 16px; cursor: pointer; }
+
+.profile-pic {
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.section-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin-bottom: 8px;
+}
+
+/* The outer container */
+.popular-container {
+  padding: 16px;
+  width: 100%;
+}
+
+/* Grid for repositories */
+.popular-repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 16px;
+}
+
+/* Each repo card */
+.repo-card {
+  border: 1px solid #d1d5da;
+  padding: 16px;
+  border-radius: 6px;
+  /* background: #fff; */
+}
+
+/* Repo header: title + badge */
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.repo-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.repo-title:hover {
+  text-decoration: underline;
+}
+
+.repo-badge {
+  background: #e1e4e8;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Description */
+.repo-desc {
+  font-size: 14px;
+  color: #586069;
+  margin-bottom: 12px;
+  min-height: 40px;
+}
+
+/* Repo stats row */
+.repo-stats {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  color: #586069;
+}
+
+/* Language dot */
+.language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #f1e05a; /* default yellow */
+  border-radius: 50%;
+}
+
+/* Cards wrapper on profile page */
+.cards-row {
+  width: 100%;
+}
+
+.card.popular-repos {
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  color: #586069;
+  padding: 20px 0;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .layout { flex-direction: column; padding: 12px; }
+  .left-panel { width: 100%; }
+  .avatar { height: 200px; }
+  .main { min-width: 100%; } /* Fix for small screens */
+  .stats-row { flex-direction: column; }
+  .right-column { order: 2; }
+}

@@ -1,0 +1,133 @@
+/* ----------------------- MAIN TOP NAV ----------------------- */
+
+.nav-container {
+  width: 100%;
+  padding: 12px 20px;
+  background: #f6f8fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d0d7de;
+}
+
+/* Left: Menu + GitHub logo + username */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.github-logo {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ----------------------- RIGHT SIDE ----------------------- */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 6px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  width: 240px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  background: transparent;
+}
+
+.search-icon {
+  margin-right: 6px;
+  font-size: 15px;
+}
+
+/* Individual icon buttons (GitHub style) */
+.nav-right .icon-btn {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-right .icon-btn:hover {
+  background: #f3f4f6;
+}
+
+/* Profile Image */
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #d0d7de !important;
+  cursor: pointer;
+}
+
+/* ----------------------- TABS ROW ----------------------- */
+
+.tabs-container {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
+  padding-left: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.tab {
+  padding: 14px 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.tab:hover {
+  color: #000;
+}
+
+.tab.active {
+  font-weight: 600;
+  color: #000;
+  border-bottom: 2px solid #fd8c73;
+}
+
+/* Tab count (badge) */
+.count {
+  background: #e5e7eb;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
