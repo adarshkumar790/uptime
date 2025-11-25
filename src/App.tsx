@@ -109,7 +109,7 @@ export default function ProfilePage() {
 
                 <div className="stats-row">
                   <div className="heatmap-column">
-                    <div className="card cards-row">
+                    <div className="card">
                       <div className="card-header">
                         <div>
                           {filteredContribs
@@ -126,7 +126,7 @@ export default function ProfilePage() {
                       />
                     </div>
 
-                    <div className="card cards-row">
+                    <div className="card">
                       <ActivityOverview events={filteredEvents} />
                     </div>
                   </div>
