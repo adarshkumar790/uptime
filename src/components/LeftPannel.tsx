@@ -1,4 +1,12 @@
+import { BsInstagram } from "react-icons/bs";
 import "../LeftPanel.css"
+import { GiMailbox } from "react-icons/gi";
+import { FaXTwitter } from "react-icons/fa6";
+import award from "../assets/award1.jpg";
+import award1 from "../assets/award5.jpg";
+import award2 from "../assets/award6.jpg";
+import uptime from "../assets/uptimes.png"
+
 
 interface User {
   login: string;
@@ -60,24 +68,25 @@ export default function LeftPanel({ user }: LeftPanelProps) {
           <p className="lp-info-row">📍 {user.location}</p>
         )}
 
-        {user.email && (
-          <p className="lp-info-row">
-            ✉️ <a href={`mailto:${user.email}`}>{user.email}</a>
-          </p>
-        )}
+        <p className="lp-info-row">
+          <GiMailbox /> <a href={`mailto:${user.email}`}>{user.email} "uptime@gmail.com"</a>
+        </p>
 
         {user.blog && (
           <p className="lp-info-row">
-            🔗{" "}
+            {" "}
             <a href={user.blog} target="_blank" rel="noreferrer">
               {user.blog}
             </a>
           </p>
         )}
+        <p className="lp-info-row">
+          <BsInstagram /> kushwaha
+        </p>
 
         {user.twitter_username && (
           <p className="lp-info-row">
-            🐦 @{user.twitter_username}
+            <FaXTwitter /> @{user.twitter_username}
           </p>
         )}
       </div>
@@ -86,20 +95,21 @@ export default function LeftPanel({ user }: LeftPanelProps) {
       <div className="lp-section">
         <h4 className="lp-subtitle">Achievements</h4>
         <div className="lp-achievements">
-          <img src="/badges/yolo.png" alt="yolo" className="lp-badge" />
-          <img src="/badges/medal.png" alt="medal" className="lp-badge" />
-          <img src="/badges/star.png" alt="star" className="lp-badge" />
+          <img src={award} alt="yolo" className="lp-badge" />
+          <img src={award1} alt="yolo" className="lp-badge" />
+
+          <img src={award2} alt="yolo" className="lp-badge" />
+
         </div>
       </div>
 
-      {/* Organizations */}
       <div className="lp-section">
         <h4 className="lp-subtitle">Organizations</h4>
         <div className="lp-orgs">
           <img
-            src="/orgs/uptimeai.png"
+            src={uptime}
             alt="org logo"
-            className="lp-org-avatar"
+            className="lp-org-avatar w-20 h-20"
           />
         </div>
       </div>

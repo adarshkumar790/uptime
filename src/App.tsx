@@ -35,7 +35,7 @@ export default function ProfilePage() {
 
   const [repos, setRepos] = useState<any[]>([]);
 
-  const years = Array.from({ length: 12 }, (_, i) => new Date().getFullYear() - i);
+  const years = Array.from({ length: 8 }, (_, i) => new Date().getFullYear() - i);
 
   useEffect(() => {
     if (!username) return;
