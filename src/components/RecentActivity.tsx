@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { MdArrowDownward,  MdArrowUpward } from "react-icons/md";
 
 interface Commit {
   message?: string;
@@ -31,7 +32,6 @@ interface RecentActivityProps {
 export default function RecentActivity({ events = [] }: RecentActivityProps) {
   const [openRepo, setOpenRepo] = useState<string | null>(null);
 
-  /** GROUP EVENTS BY REPO */
   const repoMap = useMemo(() => {
     const map: Record<string, GithubEvent[]> = {};
 
@@ -62,7 +62,6 @@ export default function RecentActivity({ events = [] }: RecentActivityProps) {
     );
   }
 
-  /** FORMAT INDIVIDUAL EVENTS */
   function formatEvent(ev: GithubEvent) {
     const { type, payload } = ev;
 
@@ -99,7 +98,6 @@ export default function RecentActivity({ events = [] }: RecentActivityProps) {
     <div>
       <h4>Contribution activity</h4>
 
-      {/* --- LIST OF UNIQUE REPOSITORIES --- */}
       {repos.map((repo) => (
         <div
           key={repo}
@@ -119,10 +117,9 @@ export default function RecentActivity({ events = [] }: RecentActivityProps) {
             }}
           >
             <span>{repo}</span>
-            <span>{openRepo === repo ? "▲" : "▼"}</span>
+            <span>{openRepo === repo ? <MdArrowUpward/> : <MdArrowDownward/>}</span>
           </div>
 
-          {/* --- EXPANDED EVENT DETAILS --- */}
           {openRepo === repo && (
             <div style={{ marginTop: 10, paddingLeft: 8 }}>
               {repoMap[repo].map((ev, idx) => {
@@ -158,6 +155,8 @@ export default function RecentActivity({ events = [] }: RecentActivityProps) {
       <div style={{ marginTop: 12 }}>
         <button className="btn">Show more activity</button>
       </div>
+      
     </div>
+    
   );
 }

@@ -1,11 +1,14 @@
 import { BsInstagram } from "react-icons/bs";
 import "../LeftPanel.css"
-import { GiMailbox, GiShadowFollower } from "react-icons/gi";
-import { FaXTwitter } from "react-icons/fa6";
+import { GiChainMail, GiMailbox, GiShadowFollower } from "react-icons/gi";
+import { FaLocationArrow, FaXTwitter } from "react-icons/fa6";
 import award from "../assets/award1.jpg";
 import award1 from "../assets/award5.jpg";
 import award2 from "../assets/award6.jpg";
 import uptime from "../assets/uptimes.png"
+import { SiGmail } from "react-icons/si";
+import { GoMail } from "react-icons/go";
+import { BiEdit, BiEditAlt, BiLocationPlus } from "react-icons/bi";
 
 
 interface User {
@@ -38,20 +41,15 @@ export default function LeftPanel({ user }: LeftPanelProps) {
 
   return (
     <aside className="left-panel">
-      {/* Avatar */}
       <div className="lp-avatar-wrap">
         <img src={user.avatar_url} alt={user.login} className="lp-avatar" />
       </div>
-
-      {/* Name + username */}
       <h2 className="lp-name">{user.name || user.login}</h2>
       <p className="lp-handle">{user.login}</p>
 
-      {/* Bio */}
       {user.bio && <p className="lp-bio">{user.bio}</p>}
 
-      {/* Edit Profile Button */}
-      <button className="lp-edit-btn">Edit profile</button>
+      <button className="lp-edit-btn"><BiEditAlt/> Edit profile</button>
 
       <p className="lp-follow-row">
       <GiShadowFollower/> {user.followers} followers · {user.following} following
@@ -59,15 +57,19 @@ export default function LeftPanel({ user }: LeftPanelProps) {
 
       <div className="lp-info-list">
         {user.company && (
-          <p className="lp-info-row">🏢 {user.company}</p>
+          <p className="lp-info-row"><img
+            src={uptime}
+            alt="org logo"
+            className="lp-org-avatar w-20 h-20"
+          />{user.company}</p>
         )}
 
         {user.location && (
-          <p className="lp-info-row">📍 {user.location}</p>
+          <p className="lp-info-row"><FaLocationArrow/> {user.location}</p>
         )}
 
         <p className="lp-info-row">
-          <GiMailbox /> <a href={`mailto:${user.email}`}>{user.email} "uptime@gmail.com"</a>
+          <GoMail /> <a href={`mailto:${user.email}`}>{user.email} uptime@gmail.com</a>
         </p>
 
         {user.blog && (

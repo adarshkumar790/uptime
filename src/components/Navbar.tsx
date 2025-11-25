@@ -43,10 +43,8 @@ export default function Navbar({ username }: NavbarProps) {
 
   return (
     <>
-      {/* ------------------ ROW 1 ------------------ */}
       <div className="nav-container">
 
-        {/* LEFT SIDE */}
         <div className="nav-left">
           <button className="menu-btn">
             <span className="menu-icon">☰</span>
@@ -59,16 +57,13 @@ export default function Navbar({ username }: NavbarProps) {
           </span>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="nav-right">
 
-          {/* Search Box */}
           <div className="search-box">
             <FiSearch className="search-icon" />
             <input type="text" placeholder="Type ⌘K to search" />
           </div>
 
-          {/* Right-side GitHub Icons EXACTLY LIKE IMAGE */}
           <button className="icon-btn"><GoOrganization /></button>
           <button className="icon-btn"><IoMdArrowDropdown /></button>
 
@@ -84,7 +79,6 @@ export default function Navbar({ username }: NavbarProps) {
         </div>
       </div>
 
-      {/* ------------------ ROW 2 (TABS) ------------------ */}
       <div className="tabs-container full-width">
         <div className="tab active">Overview</div>
 

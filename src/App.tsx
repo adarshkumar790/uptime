@@ -12,6 +12,8 @@ import ActivityOverview from "./components/ActivityOverview";
 import RecentActivity from "./components/RecentActivity";
 import PopularRepos from "./components/PopularRepo";
 import Navbar from "./components/Navbar";
+import { GiThumbUp } from "react-icons/gi";
+import { BsGithub } from "react-icons/bs";
 
 export default function ProfilePage() {
   const [username, setUsername] = useState<string>("shreeramk");
@@ -102,7 +104,7 @@ export default function ProfilePage() {
             {activeTab === "Overview" && (
               <>
                 <div className="cards-row">
-                  <div className="popular-repos">
+                  <div className="popular-repo">
                     <PopularRepos repos={repos} />
                   </div>
                 </div>
@@ -159,7 +161,35 @@ export default function ProfilePage() {
         </main>
       </div>
 
-      <footer className="footer">Built for assignment</footer>
+<div className="site-footer" role="contentinfo">
+    <div className="inner">
+
+      <div className="helper">
+        Seeing something unexpected? Take a look at the <a href="#">GitHub profile guide</a>.
+      </div>
+
+      <div className="footer-row">
+
+        <div className="branding" aria-hidden="false">
+          <BsGithub size={25}/>
+          <div className="brand-text">© 2025 GitHub, Inc.</div>
+        </div>
+
+        <nav className="links" aria-label="Footer links">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Security</a>
+          <a href="#">Status</a>
+          <a href="#">Community</a>
+          <a href="#">Docs</a>
+          <a href="#">Contact</a>
+          <a href="#">Manage cookies</a>
+          <a href="#">Do not share my personal information</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
     </div>
   );
 }

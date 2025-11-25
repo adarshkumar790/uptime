@@ -1,4 +1,3 @@
-/* ----------------------- MAIN TOP NAV ----------------------- */
 
 .nav-container {
   width: 100%;
@@ -10,7 +9,6 @@
   border-bottom: 1px solid #d0d7de;
 }
 
-/* Left: Menu + GitHub logo + username */
 .nav-left {
   display: flex;
   align-items: center;
@@ -34,7 +32,6 @@
   font-weight: 600;
 }
 
-/* ----------------------- RIGHT SIDE ----------------------- */
 
 .nav-right {
   display: flex;
@@ -42,7 +39,6 @@
   gap: 10px;
 }
 
-/* Search box */
 .search-box {
   display: flex;
   align-items: center;
@@ -66,7 +62,6 @@
   font-size: 15px;
 }
 
-/* Individual icon buttons (GitHub style) */
 .nav-right .icon-btn {
   background: #ffffff;
   border: 1px solid #d0d7de;
@@ -82,7 +77,6 @@
   background: #f3f4f6;
 }
 
-/* Profile Image */
 .profile-pic {
   width: 32px;
   height: 32px;
@@ -91,7 +85,6 @@
   cursor: pointer;
 }
 
-/* ----------------------- TABS ROW ----------------------- */
 
 .tabs-container {
   width: 100%;
@@ -123,7 +116,6 @@
   border-bottom: 2px solid #fd8c73;
 }
 
-/* Tab count (badge) */
 .count {
   background: #e5e7eb;
   padding: 2px 8px;
@@ -131,3 +123,89 @@
   font-size: 12px;
   font-weight: 600;
 }
+
+.btn {
+  width: 100%;
+  color: blue;
+  font-size: medium;
+}
+
+.site-footer {
+    width:100%;
+    padding:28px 16px 40px;
+    box-sizing:border-box;
+    color:var(--muted);
+    border-top: 1px solid #eef2f7; 
+  }
+
+  .site-footer .inner {
+    max-width:var(--maxW);
+    margin:0 auto;
+  }
+
+  .helper {
+    font-size:12px;
+    color:var(--muted-2);
+    text-align:center;
+    margin-bottom:14px;
+  }
+  .helper a { color:inherit; text-decoration:underline; }
+
+  .footer-row {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    font-size:12px;
+    color:var(--muted);
+  }
+
+  .branding {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-right:8px;
+  }
+
+  .branding img {
+    width:18px;
+    height:18px;
+    display:block;
+    object-fit:contain;
+    opacity:0.9;
+  }
+
+  .brand-text { font-size:12px; color:var(--muted); white-space:nowrap; }
+
+  .links {
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+
+  .links a {
+    color:var(--muted);
+    text-decoration:none;
+    font-size:12px;
+    padding:2px 4px;
+    white-space:nowrap;
+  }
+
+  .links a:not(:first-child)::before {
+    content: "·";
+    display:inline-block;
+    margin-right:8px;
+    color:var(--muted-2);
+  }
+
+  .brand-text {
+    font-size: medium;
+  }
+
+  @media (max-width:420px){
+    .brand-text { font-size:11px; }
+    .links a { font-size:11px; }
+    .helper { font-size:11px; }
+  }

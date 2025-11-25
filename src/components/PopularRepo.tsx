@@ -49,12 +49,10 @@ export default function PopularRepos({ repos = [] }: PopularReposProps) {
               </span>
             </div>
 
-            {/* Repo Description */}
             <p className="repo-desc">
               {repo.description || "No description provided"}
             </p>
 
-            {/* Stats */}
             <div className="repo-stats">
               {repo.language && (
                 <div className="language">
