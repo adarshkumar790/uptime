@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: #f6f8fa;
+  background: white;
   color: #24292f;
   -webkit-font-smoothing: antialiased;
 }
@@ -80,16 +80,22 @@ body {
   border-bottom: 2px solid #0969da;
 }
 
-/* content area */
-.content { padding: 2px 0; }
+.content { padding: 8px 0; gap: 12px; }
 
 .cards-row { display: flex; gap: 16px; margin-bottom: 18px; }
 
 .card {
   background: white;
   border-radius: 8px;
-  padding: 4px;
+  padding: 12px;
+  border: 1px solid var(--border);
 }
+
+/* .card {
+  background: white;
+  border-radius: 8px;
+  padding: 4px;
+} */
 
 /* stats */
 .stats-row { display: flex; gap: 18px; align-items: flex-start; }
@@ -154,7 +160,6 @@ body {
   color: white;
 }
 
-/* recent activity */
 .activity-list { display: flex; flex-direction: column; gap: 14px; }
 .activity-item { display: flex; gap: 10px; }
 .activity-icon {
@@ -191,13 +196,12 @@ body {
   cursor: pointer;
 }
 
-/* top navigation */
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 20px;
-  background: hsl(0, 0%, 100%);
+  background: white;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -224,7 +228,7 @@ body {
 }
 
 .count {
-  background: #e9ecef;
+  background: white;
   padding: 2px 6px;
   font-size: 12px;
   border-radius: 10px;
@@ -277,18 +281,17 @@ body {
 
 /* The outer container */
 .popular-container {
-  padding: 16px;
+  padding: 0px;
   width: 100%;
+  border: hwb(214 88% 9%);
 }
 
-/* Grid for repositories */
 .popular-repo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 3fr));
+  gap: 8px;
 }
 
-/* Each repo card */
 .repo-card {
   border: 1px solid #d1d5da;
   padding: 16px;
@@ -296,7 +299,6 @@ body {
   /* background: #fff; */
 }
 
-/* Repo header: title + badge */
 .repo-header {
   display: flex;
   justify-content: space-between;
@@ -315,7 +317,7 @@ body {
 }
 
 .repo-badge {
-  background: #e1e4e8;
+  background: white;
   padding: 2px 8px;
   border-radius: 20px;
   font-size: 12px;
@@ -376,3 +378,6 @@ body {
   .stats-row { flex-direction: column; }
   .right-column { order: 2; }
 }
+
+
+

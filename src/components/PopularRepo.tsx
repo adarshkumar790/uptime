@@ -34,7 +34,6 @@ export default function PopularRepos({ repos = [] }: PopularReposProps) {
         {repos.map((repo) => (
           <div key={repo.id} className="repo-card">
             
-            {/* Repo Title */}
             <div className="repo-header">
               <a
                 href={repo.html_url}

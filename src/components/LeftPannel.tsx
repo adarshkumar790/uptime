@@ -1,6 +1,6 @@
 import { BsInstagram } from "react-icons/bs";
 import "../LeftPanel.css"
-import { GiMailbox } from "react-icons/gi";
+import { GiMailbox, GiShadowFollower } from "react-icons/gi";
 import { FaXTwitter } from "react-icons/fa6";
 import award from "../assets/award1.jpg";
 import award1 from "../assets/award5.jpg";
@@ -53,12 +53,10 @@ export default function LeftPanel({ user }: LeftPanelProps) {
       {/* Edit Profile Button */}
       <button className="lp-edit-btn">Edit profile</button>
 
-      {/* Followers & Following */}
       <p className="lp-follow-row">
-        👥 {user.followers} followers · {user.following} following
+      <GiShadowFollower/> {user.followers} followers · {user.following} following
       </p>
 
-      {/* Info List (company, location, etc.) */}
       <div className="lp-info-list">
         {user.company && (
           <p className="lp-info-row">🏢 {user.company}</p>
@@ -91,7 +89,6 @@ export default function LeftPanel({ user }: LeftPanelProps) {
         )}
       </div>
 
-      {/* Achievements */}
       <div className="lp-section">
         <h4 className="lp-subtitle">Achievements</h4>
         <div className="lp-achievements">

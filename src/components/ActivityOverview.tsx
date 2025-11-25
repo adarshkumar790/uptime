@@ -20,7 +20,6 @@ export default function ActivityOverview({ events = [] }: ActivityOverviewProps)
 
   const { summary, repoMap } = useMemo(() => {
     const counts = { commits: 0, prs: 0, issues: 0, reviews: 0 };
-
     const repoMap: Record<string, GithubEvent[]> = {};
 
     events.forEach((ev) => {
@@ -29,7 +28,7 @@ export default function ActivityOverview({ events = [] }: ActivityOverviewProps)
 
       if (!repoMap[repoName]) repoMap[repoName] = [];
       repoMap[repoName].push(ev);
-      
+
       switch (ev.type) {
         case "PushEvent":
           counts.commits += ev.payload?.commits?.length || 0;
@@ -71,7 +70,16 @@ export default function ActivityOverview({ events = [] }: ActivityOverviewProps)
       indicator: summary.labels.map((l) => ({ name: l, max: 100 })),
       center: ["50%", "50%"],
       radius: 70,
+
+      splitLine: { show: false },
+      splitArea: { show: false },
+
+      axisLine: {
+        show: true,
+        lineStyle: { color: "#ccc", width: 1 },
+      }
     },
+
     series: [
       {
         type: "radar",
@@ -80,7 +88,7 @@ export default function ActivityOverview({ events = [] }: ActivityOverviewProps)
             value: summary.values,
             name: "Activity",
             areaStyle: { color: "rgba(36,139,83,0.15)" },
-            lineStyle: { color: "#239a3b" },
+            lineStyle: { color: "#239a3b", width: 2 },
             itemStyle: { color: "#239a3b" },
           },
         ],
