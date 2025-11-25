@@ -1,16 +1,21 @@
-// src/components/SearchUser.jsx
 import React, { useState } from "react";
 
-export default function SearchUser({ onSearch }) {
-  const [value, setValue] = useState("");
+interface SearchUserProps {
+  onSearch: (username: string) => void;
+}
+
+export default function SearchUser({ onSearch }: SearchUserProps) {
+  const [value, setValue] = useState<string>("");
 
   const handleSearch = () => {
-    if (!value) return;
+    if (!value.trim()) return;
     onSearch(value.trim());
   };
 
-  const onEnter = (e) => {
-    if (e.key === "Enter") handleSearch();
+  const onEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
