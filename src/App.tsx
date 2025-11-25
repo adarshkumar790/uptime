@@ -102,7 +102,7 @@ export default function ProfilePage() {
             {activeTab === "Overview" && (
               <>
                 <div className="cards-row">
-                  <div className="card popular-repos">
+                  <div className="popular-repos">
                     <PopularRepos repos={repos} />
                   </div>
                 </div>

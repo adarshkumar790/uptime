@@ -21,7 +21,6 @@ body {
   padding: 12px 20px;
 }
 
-/* layout */
 .layout {
   display: flex;
   gap: 20px;
@@ -29,7 +28,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   align-items: flex-start;
-  flex-wrap: nowrap; /* prevents vertical collapse */
+  flex-wrap: nowrap;
 }
 
 .left-panel {
@@ -80,25 +79,23 @@ body {
   border-bottom: 2px solid #0969da;
 }
 
-/* content area */
-.content { padding: 2px 0; }
+.content { padding: 2px 0; gap: 4px; }
 
 .cards-row { display: flex; gap: 16px; margin-bottom: 18px; }
 
 .card {
   background: white;
   border-radius: 8px;
-  padding: 4px;
+  padding: 12px;
     border: 1px solid var(--border);
     gap: 4px;
+    margin-bottom: 4px;
 }
 
-/* stats */
 .stats-row { display: flex; gap: 18px; align-items: flex-start; }
 .heatmap-column { flex: 1.6; gap: 8px; }
 .right-column { flex: 0.2; display: flex; flex-direction: column; gap: 12px; }
 
-/* heatmap */
 .card .card-header {
   display: flex;
   justify-content: space-between;
