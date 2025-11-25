@@ -1,14 +1,13 @@
 import { BsInstagram } from "react-icons/bs";
 import "../LeftPanel.css"
-import { GiChainMail, GiMailbox, GiShadowFollower } from "react-icons/gi";
+import {  GiShadowFollower } from "react-icons/gi";
 import { FaLocationArrow, FaXTwitter } from "react-icons/fa6";
 import award from "../assets/award1.jpg";
 import award1 from "../assets/award5.jpg";
 import award2 from "../assets/award6.jpg";
 import uptime from "../assets/uptimes.png"
-import { SiGmail } from "react-icons/si";
 import { GoMail } from "react-icons/go";
-import { BiEdit, BiEditAlt, BiLocationPlus } from "react-icons/bi";
+import { BiEditAlt } from "react-icons/bi";
 
 
 interface User {

@@ -12,7 +12,6 @@ import ActivityOverview from "./components/ActivityOverview";
 import RecentActivity from "./components/RecentActivity";
 import PopularRepos from "./components/PopularRepo";
 import Navbar from "./components/Navbar";
-import { GiThumbUp } from "react-icons/gi";
 import { BsGithub } from "react-icons/bs";
 
 export default function ProfilePage() {
